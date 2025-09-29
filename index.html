@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meditation Sanctuary - Find Your Inner Peace</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <h1>🧘‍♀️ Meditation Sanctuary</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><button class="nav-btn active" data-section="home">Home</button></li>
+                <li><button class="nav-btn" data-section="timer">Timer</button></li>
+                <li><button class="nav-btn" data-section="learn">Learn</button></li>
+                <li><button class="nav-btn" data-section="types">Types</button></li>
+                <li><button class="nav-btn" data-section="benefits">Benefits</button></li>
+                <li><button class="nav-btn" data-section="music">Music</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="container">
+                <div class="hero">
+                    <h2>Welcome to Your Meditation Journey</h2>
+                    <p>Find peace, reduce stress, and improve your well-being through guided meditation practice.</p>
+                    
+                    <div class="quick-timer">
+                        <h3>Quick Start Timer</h3>
+                        <div class="timer-controls">
+                            <div class="duration-buttons">
+                                <button class="btn btn--secondary timer-preset" data-minutes="5">5 min</button>
+                                <button class="btn btn--secondary timer-preset" data-minutes="10">10 min</button>
+                                <button class="btn btn--secondary timer-preset" data-minutes="15">15 min</button>
+                                <button class="btn btn--secondary timer-preset" data-minutes="20">20 min</button>
+                                <button class="btn btn--secondary timer-preset" data-minutes="30">30 min</button>
+                            </div>
+                            <div class="sound-selection">
+                                <label class="form-label">Background Sound</label>
+                                <select class="form-control" id="quickSoundSelect">
+                                    <option value="silent">Silent</option>
+                                    <option value="bell">Tibetan Bell</option>
+                                    <option value="bowl">Singing Bowl</option>
+                                    <option value="ocean">Ocean Waves</option>
+                                    <option value="rain">Forest Rain</option>
+                                    <option value="stream">Mountain Stream</option>
+                                </select>
+                            </div>
+                            <button class="btn btn--primary start-quick-timer">Start Meditation</button>
+                        </div>
+                    </div>
+                    
+                    <div class="progress-overview">
+                        <h3>Your Progress</h3>
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-number" id="totalSessions">0</div>
+                                <div class="stat-label">Sessions</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number" id="totalMinutes">0</div>
+                                <div class="stat-label">Minutes</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number" id="currentStreak">0</div>
+                                <div class="stat-label">Day Streak</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timer Section -->
+        <section id="timer" class="section">
+            <div class="container">
+                <div class="timer-section">
+                    <h2>Meditation Timer</h2>
+                    
+                    <div class="timer-display">
+                        <div class="circular-timer">
+                            <svg class="progress-ring" width="200" height="200">
+                                <circle class="progress-ring-circle" cx="100" cy="100" r="90"></circle>
+                                <circle class="progress-ring-progress" cx="100" cy="100" r="90"></circle>
+                            </svg>
+                            <div class="timer-text">
+                                <div class="time-display">05:00</div>
+                                <div class="timer-status">Ready</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timer-settings">
+                        <div class="setting-group">
+                            <label class="form-label">Duration (minutes)</label>
+                            <input type="range" class="duration-slider" min="1" max="60" value="5">
+                            <div class="slider-value">5 minutes</div>
+                        </div>
+                        
+                        <div class="setting-group">
+                            <label class="form-label">Preparation Time</label>
+                            <select class="form-control prep-time">
+                                <option value="0">None</option>
+                                <option value="1">1 minute</option>
+                                <option value="2">2 minutes</option>
+                                <option value="3">3 minutes</option>
+                                <option value="5">5 minutes</option>
+                            </select>
+                        </div>
+                        
+                        <div class="setting-group">
+                            <label class="form-label">Interval Bells</label>
+                            <select class="form-control interval-bells">
+                                <option value="0">None</option>
+                                <option value="5">Every 5 minutes</option>
+                                <option value="10">Every 10 minutes</option>
+                                <option value="15">Every 15 minutes</option>
+                            </select>
+                        </div>
+                        
+                        <div class="setting-group">
+                            <label class="form-label">Background Sound</label>
+                            <select class="form-control background-sound">
+                                <option value="silent">Silent</option>
+                                <option value="bell">Tibetan Bell</option>
+                                <option value="bowl">Singing Bowl</option>
+                                <option value="ocean">Ocean Waves</option>
+                                <option value="rain">Forest Rain</option>
+                                <option value="stream">Mountain Stream</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="timer-buttons">
+                        <button class="btn btn--primary start-timer">Start</button>
+                        <button class="btn btn--secondary pause-timer" disabled>Pause</button>
+                        <button class="btn btn--outline stop-timer" disabled>Stop</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Learn Section -->
+        <section id="learn" class="section">
+            <div class="container">
+                <h2>Beginner's Guide to Meditation</h2>
+                
+                <div class="guide-steps">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h3>Choose Your Time</h3>
+                        <p>Start with just 5-10 minutes daily. Consistency matters more than duration.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h3>Find a Quiet Space</h3>
+                        <p>Select a peaceful location where you won't be disturbed during your practice.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h3>Get Comfortable</h3>
+                        <p>Sit on a chair or cushion with spine straight but not rigid. Relax your shoulders.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <h3>Focus on Breathing</h3>
+                        <p>Close your eyes and bring attention to your natural breath without trying to control it.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">5</div>
+                        <h3>Notice Mind Wandering</h3>
+                        <p>When thoughts arise (and they will), gently acknowledge them and return to your breath.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">6</div>
+                        <h3>End Gently</h3>
+                        <p>When your timer sounds, slowly open your eyes and take a moment before moving.</p>
+                    </div>
+                </div>
+
+                <div class="challenges-section">
+                    <h3>Common Challenges & Solutions</h3>
+                    <div class="challenges-grid">
+                        <div class="challenge-card">
+                            <h4>Racing thoughts</h4>
+                            <p>This is normal! Don't fight thoughts - simply notice them and return to your breath.</p>
+                        </div>
+                        <div class="challenge-card">
+                            <h4>Physical discomfort</h4>
+                            <p>Adjust your posture as needed. Meditation should be alert but comfortable.</p>
+                        </div>
+                        <div class="challenge-card">
+                            <h4>Feeling restless</h4>
+                            <p>Start with shorter sessions and gradually increase. Consider walking meditation.</p>
+                        </div>
+                        <div class="challenge-card">
+                            <h4>Falling asleep</h4>
+                            <p>Sit up straighter, meditate earlier in the day, or try with eyes slightly open.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tips-section">
+                    <h3>Helpful Tips</h3>
+                    <ul class="tips-list">
+                        <li>Set a consistent daily meditation time</li>
+                        <li>Start small - even 2 minutes counts</li>
+                        <li>Focus on the process, not perfection</li>
+                        <li>Use guided meditations when starting</li>
+                        <li>Be patient and kind to yourself</li>
+                        <li>Track your progress to stay motivated</li>
+                        <li>Join meditation groups for community support</li>
+                        <li>Experiment with different techniques</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Types Section -->
+        <section id="types" class="section">
+            <div class="container">
+                <h2>Types of Meditation</h2>
+                <div class="types-grid">
+                    <div class="type-card">
+                        <h3>Mindfulness Meditation</h3>
+                        <div class="type-meta">
+                            <span class="difficulty">Beginner</span>
+                            <span class="duration">10-20 minutes</span>
+                        </div>
+                        <p>Focus on the present moment by observing thoughts and sensations without judgment.</p>
+                        <div class="instructions">
+                            <h4>How to practice:</h4>
+                            <p>Sit comfortably, focus on your breath, notice when your mind wanders, and gently return attention to your breathing.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="type-card">
+                        <h3>Focused Meditation</h3>
+                        <div class="type-meta">
+                            <span class="difficulty">Beginner</span>
+                            <span class="duration">5-15 minutes</span>
+                        </div>
+                        <p>Concentrate on a single object, sound, or sensation to develop attention.</p>
+                        <div class="instructions">
+                            <h4>How to practice:</h4>
+                            <p>Choose a focus point (breath, candle, sound), maintain attention on it, return focus when mind wanders.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="type-card">
+                        <h3>Loving-Kindness Meditation</h3>
+                        <div class="type-meta">
+                            <span class="difficulty">Intermediate</span>
+                            <span class="duration">15-20 minutes</span>
+                        </div>
+                        <p>Cultivate compassion and goodwill toward yourself and others.</p>
+                        <div class="instructions">
+                            <h4>How to practice:</h4>
+                            <p>Start with loving thoughts for yourself, extend to loved ones, then strangers, and finally difficult people.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="type-card">
+                        <h3>Body Scan Meditation</h3>
+                        <div class="type-meta">
+                            <span class="difficulty">Beginner</span>
+                            <span class="duration">20-30 minutes</span>
+                        </div>
+                        <p>Systematically focus attention on different parts of your body.</p>
+                        <div class="instructions">
+                            <h4>How to practice:</h4>
+                            <p>Lie down, start from toes, slowly move attention up through each body part, noting sensations.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="type-card">
+                        <h3>Walking Meditation</h3>
+                        <div class="type-meta">
+                            <span class="difficulty">Beginner</span>
+                            <span class="duration">10-20 minutes</span>
+                        </div>
+                        <p>Practice mindfulness while walking slowly and deliberately.</p>
+                        <div class="instructions">
+                            <h4>How to practice:</h4>
+                            <p>Walk slowly, focus on each step, coordinate with breathing, be aware of surroundings.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="type-card">
+                        <h3>Mantra Meditation</h3>
+                        <div class="type-meta">
+                            <span class="difficulty">Intermediate</span>
+                            <span class="duration">10-20 minutes</span>
+                        </div>
+                        <p>Repeat a word, phrase, or sound to focus the mind.</p>
+                        <div class="instructions">
+                            <h4>How to practice:</h4>
+                            <p>Choose a mantra (Om, peace, etc.), repeat silently or aloud, return to mantra when distracted.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section id="benefits" class="section">
+            <div class="container">
+                <h2>Scientific Benefits of Meditation</h2>
+                <div class="benefits-grid">
+                    <div class="benefits-category">
+                        <h3>Mental Health</h3>
+                        <ul>
+                            <li>Reduces stress and anxiety by 23% in 8 weeks</li>
+                            <li>Improves emotional regulation and mood</li>
+                            <li>Enhances self-awareness and mindfulness</li>
+                            <li>Decreases symptoms of depression</li>
+                            <li>Increases attention span and focus</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="benefits-category">
+                        <h3>Physical Health</h3>
+                        <ul>
+                            <li>Lowers blood pressure and heart rate</li>
+                            <li>Strengthens immune system function</li>
+                            <li>Reduces chronic pain perception</li>
+                            <li>Improves sleep quality and duration</li>
+                            <li>Decreases inflammation markers</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="benefits-category">
+                        <h3>Cognitive Benefits</h3>
+                        <ul>
+                            <li>Enhances memory and mental clarity</li>
+                            <li>Improves concentration and attention</li>
+                            <li>Increases creativity and problem-solving</li>
+                            <li>Builds mental resilience and willpower</li>
+                            <li>Promotes neuroplasticity and brain health</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Music Section -->
+        <section id="music" class="section">
+            <div class="container">
+                <h2>Meditation Sounds</h2>
+                <div class="music-grid">
+                    <div class="sound-card">
+                        <h3>Tibetan Bell</h3>
+                        <p>Traditional meditation bell with clear, resonant tone</p>
+                        <div class="sound-controls">
+                            <button class="btn btn--secondary play-sound" data-sound="bell">▶ Play Sample</button>
+                        </div>
+                    </div>
+                    
+                    <div class="sound-card">
+                        <h3>Singing Bowl</h3>
+                        <p>Deep, harmonious bowl sounds for deeper meditation</p>
+                        <div class="sound-controls">
+                            <button class="btn btn--secondary play-sound" data-sound="bowl">▶ Play Sample</button>
+                        </div>
+                    </div>
+                    
+                    <div class="sound-card">
+                        <h3>Ocean Waves</h3>
+                        <p>Gentle ocean sounds for relaxation and focus</p>
+                        <div class="sound-controls">
+                            <button class="btn btn--secondary play-sound" data-sound="ocean">▶ Play Sample</button>
+                        </div>
+                    </div>
+                    
+                    <div class="sound-card">
+                        <h3>Forest Rain</h3>
+                        <p>Soft rainfall in a peaceful forest setting</p>
+                        <div class="sound-controls">
+                            <button class="btn btn--secondary play-sound" data-sound="rain">▶ Play Sample</button>
+                        </div>
+                    </div>
+                    
+                    <div class="sound-card">
+                        <h3>Mountain Stream</h3>
+                        <p>Flowing water sounds for natural tranquility</p>
+                        <div class="sound-controls">
+                            <button class="btn btn--secondary play-sound" data-sound="stream">▶ Play Sample</button>
+                        </div>
+                    </div>
+                    
+                    <div class="sound-card">
+                        <h3>Silent</h3>
+                        <p>Complete silence for pure mindfulness practice</p>
+                        <div class="sound-controls">
+                            <button class="btn btn--secondary" disabled>Pure Silence</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Timer Modal -->
+    <div id="timerModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Meditation in Progress</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-timer">
+                    <div class="circular-timer">
+                        <svg class="progress-ring" width="150" height="150">
+                            <circle class="progress-ring-circle" cx="75" cy="75" r="65"></circle>
+                            <circle class="progress-ring-progress" cx="75" cy="75" r="65"></circle>
+                        </svg>
+                        <div class="timer-text">
+                            <div class="time-display">05:00</div>
+                            <div class="timer-status">Meditating</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-controls">
+                    <button class="btn btn--secondary pause-modal-timer">Pause</button>
+                    <button class="btn btn--outline stop-modal-timer">Stop</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
