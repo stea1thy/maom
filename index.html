@@ -20,6 +20,7 @@
                 <li><button class="nav-btn" data-section="types">Types</button></li>
                 <li><button class="nav-btn" data-section="benefits">Benefits</button></li>
                 <li><button class="nav-btn" data-section="music">Music</button></li>
+                <li><button class="nav-btn" data-section="credits">Credits</button></li>
             </ul>
         </nav>
     </header>
@@ -52,6 +53,10 @@
                                     <option value="rain">Forest Rain</option>
                                     <option value="stream">Mountain Stream</option>
                                 </select>
+                            </div>
+                            <div class="volume-control">
+                                <label class="form-label">Volume</label>
+                                <input type="range" class="volume-slider" min="0" max="1" step="0.1" value="0.3">
                             </div>
                             <button class="btn btn--primary start-quick-timer">Start Meditation</button>
                         </div>
@@ -135,6 +140,11 @@
                                 <option value="rain">Forest Rain</option>
                                 <option value="stream">Mountain Stream</option>
                             </select>
+                        </div>
+
+                        <div class="setting-group">
+                            <label class="form-label">Volume</label>
+                            <input type="range" class="main-volume-slider" min="0" max="1" step="0.1" value="0.3">
                         </div>
                     </div>
 
@@ -360,6 +370,9 @@
                         <p>Traditional meditation bell with clear, resonant tone</p>
                         <div class="sound-controls">
                             <button class="btn btn--secondary play-sound" data-sound="bell">▶ Play Sample</button>
+                            <div class="volume-control">
+                                <input type="range" class="sound-volume-slider" data-sound="bell" min="0" max="1" step="0.1" value="0.3">
+                            </div>
                         </div>
                     </div>
                     
@@ -368,6 +381,9 @@
                         <p>Deep, harmonious bowl sounds for deeper meditation</p>
                         <div class="sound-controls">
                             <button class="btn btn--secondary play-sound" data-sound="bowl">▶ Play Sample</button>
+                            <div class="volume-control">
+                                <input type="range" class="sound-volume-slider" data-sound="bowl" min="0" max="1" step="0.1" value="0.3">
+                            </div>
                         </div>
                     </div>
                     
@@ -376,6 +392,9 @@
                         <p>Gentle ocean sounds for relaxation and focus</p>
                         <div class="sound-controls">
                             <button class="btn btn--secondary play-sound" data-sound="ocean">▶ Play Sample</button>
+                            <div class="volume-control">
+                                <input type="range" class="sound-volume-slider" data-sound="ocean" min="0" max="1" step="0.1" value="0.3">
+                            </div>
                         </div>
                     </div>
                     
@@ -384,6 +403,9 @@
                         <p>Soft rainfall in a peaceful forest setting</p>
                         <div class="sound-controls">
                             <button class="btn btn--secondary play-sound" data-sound="rain">▶ Play Sample</button>
+                            <div class="volume-control">
+                                <input type="range" class="sound-volume-slider" data-sound="rain" min="0" max="1" step="0.1" value="0.3">
+                            </div>
                         </div>
                     </div>
                     
@@ -392,6 +414,9 @@
                         <p>Flowing water sounds for natural tranquility</p>
                         <div class="sound-controls">
                             <button class="btn btn--secondary play-sound" data-sound="stream">▶ Play Sample</button>
+                            <div class="volume-control">
+                                <input type="range" class="sound-volume-slider" data-sound="stream" min="0" max="1" step="0.1" value="0.3">
+                            </div>
                         </div>
                     </div>
                     
@@ -400,6 +425,45 @@
                         <p>Complete silence for pure mindfulness practice</p>
                         <div class="sound-controls">
                             <button class="btn btn--secondary" disabled>Pure Silence</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Credits Section -->
+        <section id="credits" class="section">
+            <div class="container">
+                <div class="credits-content">
+                    <h2>Credits</h2>
+                    
+                    <div class="credits-section">
+                        <h3>Group Members</h3>
+                        <div class="members-grid">
+                            <div class="member-card">
+                                <div class="member-name">Shashank Sivakumar</div>
+                                <div class="member-roll">CB.SC.U4CSE25655</div>
+                            </div>
+                            <div class="member-card">
+                                <div class="member-name">Nambi Prasanna B</div>
+                                <div class="member-roll">CB.SC.U4CSE25641</div>
+                            </div>
+                            <div class="member-card">
+                                <div class="member-name">Dhullipalla Hanshith</div>
+                                <div class="member-roll">CB.SC.U4CSE25616</div>
+                            </div>
+                            <div class="member-card">
+                                <div class="member-name">BV Abhinav</div>
+                                <div class="member-roll">CB.SC.U4CSE25607</div>
+                            </div>
+                            <div class="member-card">
+                                <div class="member-name">Sai Hruthik GP</div>
+                                <div class="member-roll">CB.SC.U4CSE25623</div>
+                            </div>
+                            <div class="member-card">
+                                <div class="member-name">Dhanwinn</div>
+                                <div class="member-roll">CB.SC.U4CSE25639</div>
+                            </div>
                         </div>
                     </div>
                 </div>
